@@ -7,7 +7,8 @@ import HearingMessage from "./pages/HearingMessage";
 function App() {
   return (
       <div>
-           <HearingMessage/>
+          {/*<HearingMessage/>*/}
+          <Main/>
       </div>
 
   );

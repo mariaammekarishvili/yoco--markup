@@ -1,7 +1,6 @@
 import audio from '../assets/audio.mp3'
 import {useEffect, useState} from "react";
 
-
 const HearingMessage = () => {
     const [start,setStart] = useState()
     const [audioF,setAudioF] = useState(new Audio(audio))

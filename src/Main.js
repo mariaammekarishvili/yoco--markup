@@ -1,10 +1,10 @@
 import './App.css';
-import SideBar from './pages/SideBar'
+import CallWindow from "./pages/CallWindow";
 
 const Main = () => {
     return(
         <div className={'main'}>
-            <SideBar/>
+            <CallWindow/>
         </div>
     )
 }

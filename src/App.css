@@ -56,6 +56,7 @@
   clip-path: polygon(0 0, 100% 0, 100% 100%);
 }
 .message__page{
+  background-position: center;
   background-size: cover;
   object-fit: cover;
   position: relative;
@@ -145,4 +146,127 @@
 }
 .display--none{
   display: none;
+}
+.call-window{
+  position: absolute;
+  cursor: move;
+  margin: auto;
+  user-select: none;
+  right: 33px;
+  top: 57px;
+}
+.call-window--box{
+  background: #3C4A57;
+  box-shadow: 0px 20px 40px #000000;
+  border-radius: 10px;
+  width: 331px;
+  height: 197px;
+  box-sizing: border-box;
+  padding: 7px;
+}
+.call__img--box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 317px;
+  height: 134px;
+  background: #4D5A65;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.call__participant--img{
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  margin: 0 6px;
+  opacity: 10;
+  z-index: 100;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 1px 1px 1px 1px;
+}
+.call__option--box{
+  display: flex;
+  align-items: center;
+}
+.call__option--box>div{
+  height: 36px;
+  min-width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 11px;
+  border-radius: 10px;
+  background: #4D5A65;
+  cursor: pointer;
+  max-width: 58px;
+  margin: 0 4px;
+}
+.call__option--icon:first-child{
+  width: 16px;
+  fill: white;
+}
+.option__icon--arrow{
+  margin-left: 14px;
+  /*width: 7px;*/
+  height: 6px;
+}
+.call__option--box>.end-call{
+  width: 47px;
+  height: 36px;
+  background: #D13636 0% 0% no-repeat padding-box;
+  border-radius: 10px;
+}
+.end-call>img{
+  width: 19px;
+}
+.call__connection--box{
+  margin-top: 8px;
+  width: 481px;
+  height: 431px;
+  background: rgba(53, 56, 61, 0.55);
+  box-shadow: 0px 20px 40px #000000;
+  border-radius: 10px;
+  opacity: 1;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding-top: 25px;
+}
+.call__connection--header{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 34px;
+}
+.call__connection--header>input{
+  width: 218px;
+  height: 36px;
+  background: rgba(53, 56, 61, 0.05);
+  border-radius: 13px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  text-align: left;
+  font: normal normal normal 14px/30px Bw Nista Grotesk;
+  letter-spacing: 0.56px;
+  color: #FFFFFF;
+  margin-right: 14px;
+  outline: none;
+  border: none;
+  padding: 0 20px;
+  font-family: 'Bw Nista Grotesk', sans-serif;
+
+}
+.call__connection--header>div{
+  font-family: 'Bw Nista Grotesk', sans-serif;
+  background: #5E5D60;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  min-width: 95px;
+  height: 36px;
+  text-align: left;
+  font: normal normal normal 12px/30px Bw Nista Grotesk;
+  letter-spacing: 0.48px;
+  color: #FFFFFF;
+  margin: 0 4px;
+  justify-content: center;
+  font-family: 'Bw Nista Grotesk', sans-serif;
 }
