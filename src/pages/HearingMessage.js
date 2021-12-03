@@ -1,11 +1,22 @@
-import audio from '../assets/audio.mp4'
-import {useState} from "react";
+import audio from '../assets/audio.mp3'
+import {useEffect, useState} from "react";
 
 
 const HearingMessage = () => {
     const [start,setStart] = useState()
     const [audioF,setAudioF] = useState(new Audio(audio))
     const [dismiss,setDismiss] = useState(false)
+    const [duration,setDuration] = useState(14)
+
+    useEffect(() => {
+       if(duration === 0 || dismiss){
+           setStart(false)
+           setDuration(14)
+       }else if(start){
+           const interval = setInterval(() => start ? setDuration(duration => duration - 1) : '' , 1000)
+           return () => start ?  clearInterval(interval) : '';
+       }
+    },[start,duration])
 
     const playAudio = () => {
         audioF.play();
@@ -14,10 +25,12 @@ const HearingMessage = () => {
     const stopAudio = () => {
         audioF.pause();
         setStart(false)
-    }
 
+    }
     const dismissNotfi = () => {
         setDismiss(true)
+        audioF.pause();
+        setAudioF(new Audio(audio))
         setTimeout(() =>   setDismiss(false) , 2000 )
     }
 
@@ -38,7 +51,7 @@ const HearingMessage = () => {
                                 <path d="M14.3089 4.44482H6.68672C5.41646 4.44482 4.38672 5.47457 4.38672 6.74482V33.2559C4.38672 34.5262 5.41646 35.5559 6.68672 35.5559H14.3089C15.5792 35.5559 16.6089 34.5262 16.6089 33.2559V6.74482C16.6089 5.47457 15.5792 4.44482 14.3089 4.44482Z" fill="white"/>
                                 <path d="M33.1996 4.44482H25.5773C24.3071 4.44482 23.2773 5.47457 23.2773 6.74482V33.2559C23.2773 34.5262 24.3071 35.5559 25.5773 35.5559H33.1996C34.4698 35.5559 35.4996 34.5262 35.4996 33.2559V6.74482C35.4996 5.47457 34.4698 4.44482 33.1996 4.44482Z" fill="white"/>
                             </svg>
-                            <p>0:17</p>
+                            <p>0:{duration}</p>
                         </div>
                         <button onClick={dismissNotfi} className={'message__button--dismiss'}>Dismiss</button>
                     </div>
