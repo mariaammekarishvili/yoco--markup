@@ -3,10 +3,9 @@ import {useState} from "react";
 
 
 const HearingMessage = () => {
-    // let audio = new Audio('https://www.youtube.com/watch?v=2sc-4a-3NFs')
-
     const [start,setStart] = useState()
     const [audioF,setAudioF] = useState(new Audio(audio))
+    const [dismiss,setDismiss] = useState(false)
 
     const playAudio = () => {
         audioF.play();
@@ -17,10 +16,15 @@ const HearingMessage = () => {
         setStart(false)
     }
 
+    const dismissNotfi = () => {
+        setDismiss(true)
+        setTimeout(() =>   setDismiss(false) , 2000 )
+    }
+
 
     return(
         <div className={'message__page'}>
-            <div className={'message__box'}>
+            <div className={'message__box' + (dismiss ? ' display--none' : '')}>
                 <img className={'img message__img'} src={'https://media.istockphoto.com/photos/self-portrait-picture-of-a-man-on-the-top-of-the-mountain-picture-id1209510443?k=20&m=1209510443&s=612x612&w=0&h=naqeTqBD7New3EanvizXyXrRR5V38ybXTkktYnsSrmQ='}/>
                 <div className={'message__info--content'}>
                     <h2 className={'message__author'}>Shmulik Grizim</h2>
@@ -36,7 +40,7 @@ const HearingMessage = () => {
                             </svg>
                             <p>0:17</p>
                         </div>
-                        <button className={'message__button--dismiss'}>Dismiss</button>
+                        <button onClick={dismissNotfi} className={'message__button--dismiss'}>Dismiss</button>
                     </div>
                 </div>
             </div>

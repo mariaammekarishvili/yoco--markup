@@ -132,6 +132,7 @@
   height: 33px;
   background: rgb(55,54,55);
   border-radius: 10px;
+  cursor: pointer;
 }
 .voice__box--icon>path{
   fill: white;
