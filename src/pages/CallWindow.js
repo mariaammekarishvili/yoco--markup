@@ -60,4 +60,4 @@ const CallWindow = () => {
     )
 }
 
-export default CallWindow
+export default CallWindow;

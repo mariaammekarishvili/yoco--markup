@@ -33,9 +33,7 @@ const HearingMessage = () => {
         setTimeout(() =>   setDismiss(false) , 2000 )
     }
 
-
     return(
-        <div className={'message__page'}>
             <div className={'message__box' + (dismiss ? ' display--none' : '')}>
                 <img className={'img message__img'} src={'https://media.istockphoto.com/photos/self-portrait-picture-of-a-man-on-the-top-of-the-mountain-picture-id1209510443?k=20&m=1209510443&s=612x612&w=0&h=naqeTqBD7New3EanvizXyXrRR5V38ybXTkktYnsSrmQ='}/>
                 <div className={'message__info--content'}>
@@ -56,8 +54,6 @@ const HearingMessage = () => {
                     </div>
                 </div>
             </div>
-        </div>
     )
 }
-
-export default  HearingMessage
+export default  HearingMessage;

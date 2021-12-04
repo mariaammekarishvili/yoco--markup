@@ -1,4 +1,3 @@
-import monitor from "../assets/monitor.png";
 import arrow from "../assets/arrow.png"
 
 const CallOptions = (props) => {

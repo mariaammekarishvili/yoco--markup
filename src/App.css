@@ -160,6 +160,7 @@ button{
   right: 33px;
   top: 57px;
   width: 400px;
+  z-index: 500;
 }
 .call-window--box{
   background: #3C4A57;
