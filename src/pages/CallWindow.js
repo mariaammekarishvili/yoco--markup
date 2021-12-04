@@ -6,8 +6,16 @@ import camera from  "../assets/video-camera.png"
 import add from "../assets/addition.png"
 import lock from "../assets/lock.png"
 import phone from "../assets/phone.png"
+import ContentItem from "../components/ContentItem";
+import {useState} from "react";
 
 const CallWindow = () => {
+   const [openContact,setOpenContent] = useState(false)
+
+   const openAction = () => {
+       setOpenContent(!openContact)
+    }
+
     return(
         <Draggable>
             <div className={'call-window'}>
@@ -20,18 +28,33 @@ const CallWindow = () => {
                         <CallOptions src={monitor}/>
                         <CallOptions src={microphone} options/>
                         <CallOptions src={camera} options/>
-                        <CallOptions src={add}/>
+                        <CallOptions src={add} add func={openAction} />
                         <CallOptions src={lock}/>
                         <CallOptions src={phone} off/>
                     </div>
                 </div>
-                <div className={'call__connection--box'}>
+                {openContact ?
+                <div className={'call__connection--box'} >
                     <div className={'call__connection--header'}>
-                        <input type={'text'}/>
+                        <input type={'text'} placeholder={'enter name'}/>
                         <div>Favorites</div>
                         <div>Recent</div>
                     </div>
+                        <div className={'call__connection--content'}>
+                            <ContentItem
+                                src={'https://image.shutterstock.com/image-photo/close-young-smiling-man-casual-260nw-1521512921.jpg'}/>
+                            <ContentItem
+                                src={'https://www.the-sun.com/wp-content/uploads/sites/6/2020/11/NINTCHDBPICT000622320037.jpg'}/>
+                            <ContentItem
+                                src={'https://www.westend61.de/images/0001529325pw/handsome-male-doctor-against-gray-wall-in-hospital-GIOF11522.jpg'}/>
+                            <ContentItem
+                                src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR40LOSr_WvREnYlZu2W9dRcDM5wWvOdKAdLL87SoTedgVisqn_KaHlKZZFqlJeLoyMYjw&usqp=CAU'}/>
+                            <ContentItem
+                                src={'https://storage.googleapis.com/ares-profile-pictures/hd/doctor.negrete-db6d6246d82fd6a9ee9e29c02ccb79c7_hd.jpg'}/>
+                        </div>
                 </div>
+                    :''
+                }
             </div>
         </Draggable>
     )

@@ -3,6 +3,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Bw Nista Grotesk', sans-serif;
+
+}
+button{
+  cursor: pointer;
 }
 .main{
   min-height: 100vh;
@@ -154,6 +159,7 @@
   user-select: none;
   right: 33px;
   top: 57px;
+  width: 400px;
 }
 .call-window--box{
   background: #3C4A57;
@@ -219,6 +225,8 @@
   width: 19px;
 }
 .call__connection--box{
+  position: relative;
+  left: -255px;
   margin-top: 8px;
   width: 481px;
   height: 431px;
@@ -233,7 +241,7 @@
 .call__connection--header{
   display: flex;
   justify-content: center;
-  margin-bottom: 34px;
+  margin-bottom:24px;
 }
 .call__connection--header>input{
   width: 218px;
@@ -249,13 +257,13 @@
   margin-right: 14px;
   outline: none;
   border: none;
-  padding: 0 20px;
+  padding: 0 9px;
   font-family: 'Bw Nista Grotesk', sans-serif;
 
 }
 .call__connection--header>div{
   font-family: 'Bw Nista Grotesk', sans-serif;
-  background: #5E5D60;
+  background: rgba(94, 93, 96, 0.49);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -269,4 +277,74 @@
   margin: 0 4px;
   justify-content: center;
   font-family: 'Bw Nista Grotesk', sans-serif;
+  cursor: pointer;
 }
+.call__connection--item{
+  display: flex;
+  align-items: center;
+  padding: 10px 22px;
+  border-bottom:  1px solid #00000043;
+}
+.call__connection--item>img{
+  width: 53px;
+  height: 53px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.info>h2{
+  text-align: left;
+  font: normal normal bold 15px/18px Bw Nista Grotesk;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  font-family: 'Bw Nista Grotesk', sans-serif;
+  margin-bottom: 2px;
+}
+.info>h3{
+  text-align: left;
+  font: normal normal normal 12px/15px Bw Nista Grotesk;
+  letter-spacing: 0.48px;
+  color: rgba(215, 203, 203, 0.62);
+  font-family: 'Bw Nista Grotesk', sans-serif;
+}
+.call--button{
+  display: flex;
+  border-radius: 13px;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  width: 71px;
+  height: 40px;
+  text-align: left;
+  font: normal normal normal 12px/30px Bw Nista Grotesk;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  font-family: 'Bw Nista Grotesk', sans-serif;
+  border: none;
+  background: rgba(94, 93, 96, 0.49);
+}
+.call__connection--content{
+  overflow-y: scroll;
+  width: 100%;
+  height: 85%;
+}
+::-webkit-scrollbar {
+  width: 1px;
+  padding-right: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: none;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:  none;
+  border-radius: 10px;
+  width: 4px;
+  position: relative;
+  right: 10px;
+}
+
+/* Handle on hover */
